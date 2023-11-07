@@ -67,24 +67,6 @@ export default function BurgerMenu() {
                 <a href="javascript:void(0)">About me</a>
               </li>
             </ul>
-
-            {/* <div className="icons-box pt-5 md:pt flex items-center gap-[28px]">
-          <a href="https://github.com/ismoilov223" target="_blank">
-            <img src={github} alt="" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/shukurullo-ismoilov-449819263/"
-            target="_blank"
-          >
-            <img src={linkedin} alt="" />
-          </a>
-          <a
-            href="https://www.figma.com/files/user/1057634489051799421?fuid=1057634489051799421"
-            target="_blank"
-          >
-            <img src={figma} alt="" />
-          </a>
-        </div> */}
           </div>
         </div>
         <div className="hidden space-x-2  md:flex items-center gap-[28px]">
