@@ -1,7 +1,6 @@
 import React from "react";
-import Navbar from "./component/Navbar";
-import BurgerMenu from "./component/BurgerMenu";
-import Hero from "./component/hero";
+import BurgerMenu from "./BurgerMenu";
+import Hero from "./Hero";
 
 const Header = () => {
   return (

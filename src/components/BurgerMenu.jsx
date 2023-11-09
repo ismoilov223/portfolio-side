@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { figma, github, linkedin, logo } from "../../images";
+import { figma, github, linkedin, logo } from "../images";
 export default function BurgerMenu() {
   const [navbar, setNavbar] = useState(false);
   const [isOpen, setOpen] = useState(false)
   return (
     <nav className="w-full bg-transparent">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <div className="justify-between px-4 mx-auto max-width md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <div className="text-box flex items-center gap-[12px]">
