@@ -12,7 +12,7 @@
     @apply lg:max-w-7xl;
   }
   .gradient-btn {
-    border-radius: 73px;
+    border-radius: 23px;
     background: linear-gradient(
       270deg,
       #13adc7 0%,

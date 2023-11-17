@@ -57,7 +57,7 @@ export default function BurgerMenu() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-xl sm:text-[30px] text-white font-medium">
+              <li className="text-xl sm:text-[30px] text-white font-medium duration-150 hover:text-[#7abce7]">
                 <a href="javascript:void(0)">Projects</a>
               </li>
               <li className="text-xl sm:text-[30px] text-white font-medium">
