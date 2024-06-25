@@ -37,7 +37,7 @@ export default function Cvmodal() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Button text={"Uzbek CV"}></Button>
+                    <Button costumStyle={"px-14"} text={"Uzbek CV"}></Button>
                   </a>
                 </div>
                 {/*footer*/}
