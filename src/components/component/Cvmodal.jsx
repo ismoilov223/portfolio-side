@@ -7,7 +7,7 @@ export default function Cvmodal() {
   return (
     <>
       <button
-        className="px-12 py-4 text-white text-2xl gradient-btn"
+        className="px-6 md:px-12 py-4 text-white text-2xl gradient-btn "
         type="button"
         onClick={() => setShowModal(true)}
       >
