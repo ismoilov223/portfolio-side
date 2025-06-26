@@ -14,8 +14,8 @@ const projectData = [
 export default function Projects() {
   return (
     <>
-      <div className="projects py-4 px-4 max-width">
-        <h1 className="text-4xl md:text-6xl font-semibold text-white">
+      <div className="projects py-10 px-4 max-width">
+        <h1 className="text-2xl pb-5 md:text-4xl font-semibold text-white">
           Projects
         </h1>
         <div className="containbox flex justify-between">

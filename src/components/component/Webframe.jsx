@@ -2,31 +2,25 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const Webframe = ({ wurl }) => {
   const [dimensions, setDimensions] = useState({ height: '250px', width: '100%' });
+  const [screenshotUrl, setScreenshotUrl] = useState(null);
   const iframeRef = useRef(null);
 
   useEffect(() => {
-    const adjustDimensions = () => {
-      if (iframeRef.current) {
-        const iframeDocument = iframeRef.current.contentDocument || iframeRef.current.contentWindow.document;
-        if (iframeDocument) {
-          setDimensions({
-            height: iframeDocument.body.scrollHeight + 'px',
-            width: iframeDocument.body.scrollWidth + 'px'
-          });
-        }
+    // Fetch a screenshot of the website using an external API
+    const fetchScreenshot = async () => {
+      try {
+        const apiKey = 'YOUR_SCREENSHOT_API_KEY'; // Replace with your Screenshot API key
+        const response = await fetch(
+          `https://api.screenshotapi.net/screenshot?token=${apiKey}&url=${encodeURIComponent(wurl)}&width=1280&height=720`
+        );
+        const data = await response.json();
+        setScreenshotUrl(data.screenshot);
+      } catch (error) {
+        console.error('Error fetching screenshot:', error);
       }
     };
 
-    const iframe = iframeRef.current;
-    if (iframe) {
-      iframe.addEventListener('load', adjustDimensions);
-    }
-
-    return () => {
-      if (iframe) {
-        iframe.removeEventListener('load', adjustDimensions);
-      }
-    };
+    fetchScreenshot();
   }, [wurl]);
 
   const handleClick = () => {
@@ -34,13 +28,22 @@ const Webframe = ({ wurl }) => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-gray-700" style={{ height: dimensions.height, width: dimensions.width }}>
-      <iframe
-        ref={iframeRef}
-        src={wurl}
-        className="w-full h-full rounded-xl pointer-events-none"
-        style={{ height: dimensions.height, width: dimensions.width }}
-      ></iframe>
+    <div
+      className="relative overflow-hidden rounded-xl border border-gray-700"
+      style={{ height: dimensions.height, width: dimensions.width }}
+    >
+      {screenshotUrl ? (
+        <img
+          src={screenshotUrl}
+          alt="Website Screenshot"
+          className="w-full h-full rounded-xl"
+          style={{ height: dimensions.height, width: dimensions.width }}
+        />
+      ) : (
+        <div className="flex items-center justify-center w-full h-full bg-gray-200">
+          Loading screenshot...
+        </div>
+      )}
       <div
         className="absolute inset-0 cursor-pointer"
         onClick={handleClick}
