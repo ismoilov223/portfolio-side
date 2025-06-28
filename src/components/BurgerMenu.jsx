@@ -61,7 +61,7 @@ export default function BurgerMenu() {
                 <a href="#projects">Projects</a>
               </li>
               <li className="text-xl sm:text-[30px] text-white font-medium duration-150 hover:text-[#7abce7]">
-                <a href="javascript:void(0)">Technologies</a>
+                <a href="#technologies">Technologies</a>
               </li>
               <li className="text-xl sm:text-[30px] text-white font-medium duration-150 hover:text-[#7abce7]">
                 <a href="javascript:void(0)">About me</a>
